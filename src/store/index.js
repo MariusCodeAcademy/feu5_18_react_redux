@@ -19,7 +19,7 @@ const counterSlice = createSlice({
       state.showCounter = !state.showCounter;
     },
     upBy(state, action) {
-      state.counter += action.amount;
+      state.counter += action.payload;
     },
   },
 });

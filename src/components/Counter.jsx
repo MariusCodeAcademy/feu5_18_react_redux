@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from './ui/card/Card';
 import { useDispatch, useSelector } from 'react-redux';
+import { counterActions } from '../store';
 
 function Counter() {
   // nuskaidom redux data
@@ -11,19 +12,21 @@ function Counter() {
   // inicijuojam pokyti su useDispatch
   const dispatch = useDispatch();
   function upHandler() {
-    dispatch({ type: 'UP' });
+    // dispatch({ type: 'UP' });
+    dispatch(counterActions.up()); // { type: 'unikalus id' }
   }
 
   function downHandler() {
-    dispatch({ type: 'DOWN' });
+    dispatch(counterActions.down());
   }
 
   function upBy(howMuch) {
-    dispatch({ type: 'UP_BY', amount: howMuch });
+    // dispatch({ type: 'UP_BY', amount: howMuch });
+    dispatch(counterActions.upBy(howMuch)); //  { type: 'unikalus id', payload: howMuch }
   }
 
   function toggle() {
-    dispatch({ type: 'TOGGLE' });
+    dispatch(counterActions.toggle());
   }
 
   return (
