@@ -1,10 +1,10 @@
 // gyvens app wide state
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, configureStore } from '@reduxjs/toolkit';
 import { createStore } from 'redux';
 
 const initCounterState = { counter: 10, showCounter: true };
 
-createSlice({
+const counterSlice = createSlice({
   name: 'counter',
   initialState: initCounterState,
   reducers: {
@@ -44,6 +44,11 @@ createSlice({
 // }
 
 // store sukurimas
-const store = createStore(counterReducer);
+// const store = createStore(counterReducer);
+const store = configureStore({
+  reducer: counterSlice.reducer,
+});
 
+// console.log('counterSlice.actions ===', counterSlice.actions);
+export const counterActions = counterSlice.actions;
 export default store;
