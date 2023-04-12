@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './ui/card/Card';
 import { useDispatch, useSelector } from 'react-redux';
-import { counterActions } from '../store';
+import { counterActions } from '../store/_counter';
 import Logout from './Logout';
 
 function Counter() {
