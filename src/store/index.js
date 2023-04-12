@@ -1,6 +1,5 @@
 // gyvens app wide state
 import { createSlice, configureStore } from '@reduxjs/toolkit';
-import { createStore } from 'redux';
 
 const initCounterState = { counter: 10, showCounter: true };
 
@@ -24,31 +23,31 @@ const counterSlice = createSlice({
   },
 });
 
-// reducer function
-// function counterReducer(state = initCounterState, action) {
-//   switch (action.type) {
-//     case 'TOGGLE':
-//       return { ...state, showCounter: !state.showCounter };
-//     case 'UP':
-//       // niekada nemodifikuojam state tiesiogiai
-//       // state.counter++ -- not todo
-//       return { ...state, counter: state.counter + 1 };
-//     case 'DOWN':
-//       return { ...state, counter: state.counter - 1 };
-//     case 'UP_BY':
-//       return { ...state, counter: state.counter + action.amount };
-//     default:
-//       console.warn('action not found');
-//       return state;
-//   }
-// }
+const initAuthState = { isAuthenticated: false };
+
+const authSlice = createSlice({
+  name: 'authentication',
+  initialState: initAuthState,
+  reducers: {
+    login(state) {
+      state.isAuthenticated = true;
+    },
+    logout(state) {
+      //
+    },
+  },
+});
 
 // store sukurimas
 // const store = createStore(counterReducer);
 const store = configureStore({
-  reducer: counterSlice.reducer,
+  reducer: {
+    counter: counterSlice.reducer,
+    auth: authSlice.reducer,
+  },
 });
 
 // console.log('counterSlice.actions ===', counterSlice.actions);
+export const authActions = authSlice.actions;
 export const counterActions = counterSlice.actions;
 export default store;

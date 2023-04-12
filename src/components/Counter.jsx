@@ -5,8 +5,8 @@ import { counterActions } from '../store';
 
 function Counter() {
   // nuskaidom redux data
-  const counterFromStore = useSelector((state) => state.counter);
-  const show = useSelector((state) => state.showCounter);
+  const counterFromStore = useSelector((state) => state.counter.counter);
+  const show = useSelector((state) => state.counter.showCounter);
   // counterFromStore++ -- read only value
 
   // inicijuojam pokyti su useDispatch
