@@ -18,3 +18,9 @@
 ## modify redux data
 
 1. useDispach()
+
+## @reduxjs/toolkit
+
+1. `npm install @reduxjs/toolkit`;
+2. `npm rm redux`
+3. Create Slice with reducers index.js
