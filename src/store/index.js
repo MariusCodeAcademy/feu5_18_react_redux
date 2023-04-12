@@ -9,6 +9,8 @@ function counterReducer(state = initState, action) {
     case 'TOGGLE':
       return { ...state, showCounter: !state.showCounter };
     case 'UP':
+      // niekada nemodifikuojam state tiesiogiai
+      // state.counter++ -- not todo
       return { ...state, counter: state.counter + 1 };
     case 'DOWN':
       return { ...state, counter: state.counter - 1 };
