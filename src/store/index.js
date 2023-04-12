@@ -5,12 +5,17 @@ const initState = { counter: 10 };
 
 // reducer function
 function counterReducer(state = initState, action) {
-  console.log('state ===', state);
-  console.log('action ===', action);
-  if (action.type === 'UP') {
-    return { counter: state.counter + 1 };
+  switch (action.type) {
+    case 'UP':
+      return { counter: state.counter + 1 };
+    case 'DOWN':
+      return { counter: state.counter - 1 };
+    case 'UP_BY':
+      return { counter: state.counter + action.amount };
+    default:
+      console.warn('action not found');
+      return state;
   }
-  return state; // switch
 }
 
 // store sukurimas

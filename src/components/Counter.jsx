@@ -13,7 +13,13 @@ function Counter() {
     dispatch({ type: 'UP' });
   }
 
-  function downHandler() {}
+  function downHandler() {
+    dispatch({ type: 'DOWN' });
+  }
+
+  function upBy(howMuch) {
+    dispatch({ type: 'UP_BY', amount: howMuch });
+  }
 
   return (
     <Card>
@@ -21,9 +27,10 @@ function Counter() {
       <p className="value">{counterFromStore}</p>
       <div className="control">
         <button onClick={upHandler}>Up</button>
-        <button>Down</button>
-        <button>Up by 10</button>
+        <button onClick={downHandler}>Down</button>
+        <button onClick={() => upBy(10)}>Up by 10</button>
       </div>
+      <button>Toggle Counter</button>
     </Card>
   );
 }
