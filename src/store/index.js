@@ -1,17 +1,19 @@
 // gyvens app wide state
 import { createStore } from 'redux';
 
-const initState = { counter: 10 };
+const initState = { counter: 10, showCounter: true };
 
 // reducer function
 function counterReducer(state = initState, action) {
   switch (action.type) {
+    case 'TOGGLE':
+      return state;
     case 'UP':
-      return { counter: state.counter + 1 };
+      return { ...state, counter: state.counter + 1 };
     case 'DOWN':
-      return { counter: state.counter - 1 };
+      return { ...state, counter: state.counter - 1 };
     case 'UP_BY':
-      return { counter: state.counter + action.amount };
+      return { ...state, counter: state.counter + action.amount };
     default:
       console.warn('action not found');
       return state;
