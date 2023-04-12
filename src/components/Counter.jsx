@@ -2,6 +2,7 @@ import React from 'react';
 import Card from './ui/card/Card';
 import { useDispatch, useSelector } from 'react-redux';
 import { counterActions } from '../store';
+import Logout from './Logout';
 
 function Counter() {
   // nuskaidom redux data
@@ -43,6 +44,7 @@ function Counter() {
         <button onClick={() => upBy(10)}>Up by 10</button>
       </div>
       <button onClick={toggle}>Toggle Counter</button>
+      <Logout />
     </Card>
   );
 }

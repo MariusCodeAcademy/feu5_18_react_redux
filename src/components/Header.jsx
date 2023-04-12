@@ -1,20 +1,20 @@
 import React from 'react';
 import Card from './ui/card/Card';
-import { useDispatch, useSelector } from 'react-redux';
-import { authActions } from '../store';
+import { useSelector } from 'react-redux';
+import Logout from './Logout';
 
 function Header() {
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // logout in header
-  function logoutHandler() {
-    dispatch(authActions.logout());
-  }
+  // function logoutHandler() {
+  //   dispatch(authActions.logout());
+  // }
   return (
     <header>
       <Card>
         {!isAuth && <p>No user is logged in</p>}
-        {isAuth && <button onClick={logoutHandler}>Logout</button>}
+        {isAuth && <Logout />}
       </Card>
     </header>
   );
