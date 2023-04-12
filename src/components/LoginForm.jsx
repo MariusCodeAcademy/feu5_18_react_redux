@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Card from './ui/card/Card';
 import { useDispatch } from 'react-redux';
-import { authActions } from '../store';
+import { authActions } from '../store/_auth';
 
 function LoginForm() {
   const [email, setEmail] = useState('');

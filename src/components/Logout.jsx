@@ -1,5 +1,5 @@
 import React from 'react';
-import { authActions } from '../store';
+import { authActions } from '../store/_auth';
 import { useDispatch, useSelector } from 'react-redux';
 
 function Logout() {
