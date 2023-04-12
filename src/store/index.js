@@ -7,7 +7,7 @@ const initState = { counter: 10, showCounter: true };
 function counterReducer(state = initState, action) {
   switch (action.type) {
     case 'TOGGLE':
-      return state;
+      return { ...state, showCounter: !state.showCounter };
     case 'UP':
       return { ...state, counter: state.counter + 1 };
     case 'DOWN':
