@@ -13,6 +13,8 @@ function Counter() {
     dispatch({ type: 'UP' });
   }
 
+  function downHandler() {}
+
   return (
     <Card>
       <h2>Push ups</h2>
@@ -20,6 +22,7 @@ function Counter() {
       <div className="control">
         <button onClick={upHandler}>Up</button>
         <button>Down</button>
+        <button>Up by 10</button>
       </div>
     </Card>
   );

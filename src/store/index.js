@@ -10,7 +10,7 @@ function counterReducer(state = initState, action) {
   if (action.type === 'UP') {
     return { counter: state.counter + 1 };
   }
-  return state;
+  return state; // switch
 }
 
 // store sukurimas
